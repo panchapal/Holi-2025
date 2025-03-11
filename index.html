@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Festival Celebration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --primary-color: #ff3e6c;
+            --secondary-color: #721eff;
+            --accent-color: #ffcc00;
+            --light-color: #ffffff;
+            --dark-color: #333333;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 60px;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-slider {
+            flex: 1;
+            min-width: 300px;
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            width: 500%;
+            height: 100%;
+            display: flex;
+            position: relative;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 0.6s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-btn {
+            width: 15px;
+            height: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.2;
+        }
+
+        h1 span {
+            display: inline-block;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        h1 span:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 204, 0, 0.4);
+            z-index: -1;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 62, 108, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover:before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 62, 108, 0.3);
+        }
+
+        .color-splash {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .splash1 {
+            background-color: var(--primary-color);
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .splash2 {
+            background-color: var(--secondary-color);
+            bottom: 10%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .splash3 {
+            background-color: var(--accent-color);
+            top: 10%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: height 0.5s ease;
+            z-index: -1;
+        }
+
+        .feature-box:hover:before {
+            height: 100%;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            width: 45%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            width: 55%;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), #222);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float-particle 15s infinite linear;
+        }
+
+        /* Countdown Timer Styles */
+        .countdown-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: move;
+            width: 280px;
+            user-select: none;
+        }
+
+        .countdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .countdown-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .countdown-close {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-close:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .countdown-minimize {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-minimize:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .countdown-controls {
+            display: flex;
+        }
+
+        .countdown-body {
+            overflow: hidden;
+            max-height: 300px;
+            transition: max-height 0.3s ease;
+        }
+
+        .countdown-body.minimized {
+            max-height: 0;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .countdown-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 55px;
+        }
+
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            width: 100%;
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .countdown-message {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .countdown-cta {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 999;
+            display: none;
+        }
+
+        .countdown-icon:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-1000px) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-content, .hero-slider {
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .hero {
+                padding: 100px 0 50px;
+            }
+            
+            .hero-slider {
+                height: 50vh;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .about-image, .about-content {
+                width: 100%;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: all 0.3s ease;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                z-index: 100;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                color: var(--dark-color);
+                margin: 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .mobile-menu.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .mobile-menu.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown-container {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Holi<span>Fest</span></div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#events">Events</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container" id="countdownContainer">
+        <div class="countdown-header" id="countdownHeader">
+            <div class="countdown-title">Holi Festival Countdown</div>
+            <div class="countdown-controls">
+                <div class="countdown-minimize" id="countdownMinimize">−</div>
+                <div class="countdown-close" id="countdownClose">×</div>
+            </div>
+        </div>
+        <div class="countdown-body" id="countdownBody">
+            <div class="countdown-timer">
+                <div class="countdown-box">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Mins</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Secs</div>
+                </div>
+            </div>
+            <div class="countdown-message">Until the most colorful celebration begins!</div>
+            <a href="#tickets" class="countdown-cta">Book Early Bird Tickets</a>
+        </div>
+    </div>
+
+    <div class="countdown-icon" id="countdownIcon">⏱️</div>
+
+    <div class="floating-particles" id="particles"></div>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Celebrate the <span>Festival of Colors</span> with us!</h1>
+                    <p>Join us for the most vibrant and colorful festival of the year. Experience the joy, music, dance, and the traditional throwing of colors as we celebrate Holi, the festival that marks the arrival of spring and the triumph of good over evil.</p>
+                    <a href="#events" class="cta-button">Explore Events</a>
+                </div>
+                <div class="hero-slider">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="img/1.jpg" alt="Holi celebration with colorful powder"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/2.jpg" alt="People dancing during Holi festival"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/3.jpg" alt="Traditional Holi sweets and food"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/4.jpg" alt="Holi bonfire celebration"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/5.jpg" alt="Water guns and colors for Holi"/>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <div class="slider-btn active" data-slide="0"></div>
+                        <div class="slider-btn" data-slide="1"></div>
+                        <div class="slider-btn" data-slide="2"></div>
+                        <div class="slider-btn" data-slide="3"></div>
+                        <div class="slider-btn" data-slide="4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="color-splash splash1"></div>
+            <div class="color-splash splash2"></div>
+            <div class="color-splash splash3"></div>
+        </section>
+
+        <section id="events">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Special Events</h2>
+                </div>
+                <div class="features">
+                    <div class="feature-box">
+                        <div class="feature-icon">🎭</div>
+                        <h3>Color Splash Party</h3>
+                        <p>The main event where everyone gathers to throw colors, dance to music, and celebrate together. Experience the true essence of Holi with organic colors.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🥘</div>
+                        <h3>Traditional Food Festival</h3>
+                        <p>Taste the authentic flavors of Holi with traditional sweets like Gujiya, Malpua, and savory snacks. Our food stalls offer the best of festive cuisine.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🔥</div>
+                        <h3>Holika Dahan Ceremony</h3>
+                        <p>Witness the ritual bonfire on the eve of Holi that symbolizes the victory of good over evil, with traditional prayers and rituals.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🎵</div>
+                        <h3>Live Music & Dance</h3>
+                        <p>Groove to the beats of dhol and traditional Holi songs with our live performers. Join in with folk dances and create lasting memories.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Art & Craft Workshops</h3>
+                        <p>Learn the art of making natural colors, traditional pottery, and other crafts with expert artisans guiding you through each step.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">👪</div>
+                        <h3>Family Fun Zone</h3>
+                        <p>A safe space for families with kids to enjoy games, face painting, and special activities designed for children of all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="img/6.jpg" alt="History of Holi festival"/>
+                    </div>
+                    <div class="about-content">
+                        <h2>The Spirit of Holi</h2>
+                        <p>Holi is one of the most revered and celebrated festivals of India and it is celebrated in almost every part of the country. It is also sometimes called the "festival of love" as people get to unite together forgetting all resentments and bad feelings towards each other.</p>
+                        <p>The festival is celebrated for two days. The first day is known as Holika Dahan or Chhoti Holi and the second as Rangwali Holi, Dhulandi, Dhulendi, or Dhulivandan.</p>
+                        <p>Holi celebrates the arrival of spring, the end of winter, the blossoming of love, and for many a festive day to meet others, play and laugh, forget and forgive, and repair broken relationships.</p>
+                        <a href="#gallery" class="cta-button">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Holi Gallery</h2>
+                </div>
+                <div class="hero-slider" style="width: 100%; height: 60vh; margin: 0 auto;">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="img/7.jpg" alt="Colorful Holi celebration with friends"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/8.jpg" alt="Traditional Holi dance performance"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/9.jpg" alt="Children enjoying Holi festival"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/10.jpg" alt="Musical instruments during Holi"/>
+                        </div>
+                        <div class="slide">
+                            <img src="img/11.jpg" alt="Colorful Holi powders arranged in patterns"/>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <div class="slider-btn active" data-slide="0"></div>
+                        <div class="slider-btn" data-slide="1"></div>
+                        <div class="slider-btn" data-slide="2"></div>
+                        <div class="slider-btn" data-slide="3"></div>
+                        <div class="slider-btn" data-slide="4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Join The Celebration</h2>
+                </div>
+                <div class="about-container">
+                    <div class="about-content">
+                        <h2>Book Your Tickets Now</h2>
+                        <p>Don't miss out on the most vibrant celebration of the year! Get your tickets early to secure your spot at our Holi festival. Special discounts available for early bird bookings and group packages.</p>
+                        <p>For any inquiries, feel free to contact us. Our team is always ready to assist you with any information you might need about the event.</p>
+                        <a href="#tickets" class="cta-button">Book Your Tickets</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/6.jpg" alt="Holi festival crowd"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Holi Fest</h4>
+                    <p>Join us for the most vibrant and colorful festival of the year celebrating the arrival of spring and the triumph of good over evil.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="#">Color Splash Party</a></li>
+                        <li><a href="#">Holika Dahan</a></li>
+                        <li><a href="#">Music & Dance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>Email: panchananpal13@gmail.com</li>
+                        <li>Phone: 9800400661</li>
+                        <li>Address: Ghatal, Paschim Medinipur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HoliFest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Slider Functionality
+        const slides = document.querySelectorAll('.slides');
+        const sliderBtns = document.querySelectorAll('.slider-btn');
+
+        sliderBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const slideIndex = btn.getAttribute('data-slide');
+                
+                slides.forEach(slide => {
+                    slide.style.transform = `translateX(-${slideIndex * 20}%)`;
+                });
+
+                document.querySelectorAll('.slider-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                btn.classList.add('active');
+            });
+        });
+
+        // Auto slide
+        let currentSlide = 0;
+        const totalSlides = sliderBtns.length;
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            
+            slides.forEach(slide => {
+                slide.style.transform = `translateX(-${currentSlide * 20}%)`;
+            });
+
+            document.querySelectorAll('.slider-btn').forEach((btn, index) => {
+                if (index === currentSlide) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }, 5000);
+
+        // Countdown Timer
+        const countdownContainer = document.getElementById('countdownContainer');
+        const countdownHeader = document.getElementById('countdownHeader');
+        const countdownBody = document.getElementById('countdownBody');
+        const countdownMinimize = document.getElementById('countdownMinimize');
+        const countdownClose = document.getElementById('countdownClose');
+        const countdownIcon = document.getElementById('countdownIcon');
+
+        // Set the Holi festival date (for demo purposes - next Holi is March 25, 2025)
+        const holiDate = new Date('March 14, 2025 00:00:00').getTime();
+
+        // Draggable functionality for countdown
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        countdownHeader.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - countdownContainer.getBoundingClientRect().left;
+            offsetY = e.clientY - countdownContainer.getBoundingClientRect().top;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                countdownContainer.style.left = (e.clientX - offsetX) + 'px';
+                countdownContainer.style.top = (e.clientY - offsetY) + 'px';
+                countdownContainer.style.right = 'auto';
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // Minimize countdown
+        countdownMinimize.addEventListener('click', () => {
+            countdownBody.classList.toggle('minimized');
+            countdownMinimize.textContent = countdownBody.classList.contains('minimized') ? '+' : '−';
+        });
+
+        // Close countdown
+        countdownClose.addEventListener('click', () => {
+            countdownContainer.style.display = 'none';
+            countdownIcon.style.display = 'flex';
+        });
+
+        // Show countdown when icon is clicked
+        countdownIcon.addEventListener('click', () => {
+            countdownContainer.style.display = 'block';
+            countdownIcon.style.display = 'none';
+        });
+
+        // Update countdown timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = holiDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
+                document.querySelector('.countdown-message').innerHTML = 'The celebrations have begun!';
+            }
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Create colorful particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const colors = ['#ff3e6c', '#721eff', '#ffcc00', '#4CAF50', '#03A9F4'];
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.backgroundColor = color;
+                
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+</body>
+</html>
