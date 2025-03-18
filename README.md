@@ -8,6 +8,11 @@ Welcome to HoliFest 2025! 🎨✨ This project is a vibrant and interactive webs
 <img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/12.png"/>
 <img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/13.png"/>
 <img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/14.png"/>
+<img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/15.png"/>
+<img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/16.png"/>
+<img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/17.png"/>
+<img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/18.png"/>
+
 
 ## 🌸 Table of Contents
 - [About the Project](#AbouttheProject)
