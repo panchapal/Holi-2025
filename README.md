@@ -2,7 +2,7 @@
 Welcome to HoliFest 2025! 🎨✨ This project is a vibrant and interactive website dedicated to celebrating Holi, the Festival of Colors. It provides information about Holi, showcases exciting events, and allows users to book tickets for the grand celebrations.
 
 ### 🌟 Live Demo
-🔗 Check out the live demo: [Live Website](https://formanhairlife.com/holi25/)
+🔗 Check out the live demo: [Live Website](https://india-2cca.vercel.app/)
 
 ## 📸 Screenshots:
 <img width="450px;" src="https://github.com/panchapal/Holi-2025/blob/main/img/12.png"/>
